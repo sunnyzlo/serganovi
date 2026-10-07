@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Рабочая родословная семьи Сергановых">
+  <title>Родословная Сергановых</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1ea;
+      --paper: #fffdf8;
+      --ink: #2d2b28;
+      --muted: #716b62;
+      --line: #c9bda9;
+      --accent: #7f4d2c;
+      --confirmed: #2f744e;
+      --probable: #ad7117;
+      --unknown: #866a9e;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.55 Georgia, "Times New Roman", serif;
+    }
+    .wrap { width: min(100% - 28px, 940px); margin: 0 auto; }
+    header {
+      padding: 42px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+    h1 { font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -.035em; }
+    h2 { margin-bottom: 18px; font-size: clamp(1.45rem, 5vw, 2.2rem); }
+    h3 { font-size: 1.06rem; }
+    .subtitle { color: var(--muted); margin: 12px 0 0; }
+    .date { color: var(--accent); font-size: .92rem; margin-top: 18px; }
+    main { padding: 26px 0 60px; }
+    section { margin: 0 0 34px; }
+    .panel {
+      background: var(--paper);
+      border: 1px solid #e2d8ca;
+      border-radius: 18px;
+      padding: clamp(18px, 4vw, 30px);
+      box-shadow: 0 8px 28px rgba(62, 43, 26, .06);
+    }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--muted); }
+    .legend span { white-space: nowrap; }
+    .tree, .tree ul { list-style: none; padding-left: 0; margin: 0; }
+    .tree > li { padding-left: 0; }
+    .tree ul { margin: 10px 0 0 14px; padding-left: 18px; border-left: 2px solid var(--line); }
+    .tree li { position: relative; margin: 0 0 12px; }
+    .tree ul > li::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      left: -18px;
+      top: 1.08em;
+      background: var(--line);
+    }
+    .person {
+      display: block;
+      background: #fffefa;
+      border: 1px solid #e6ddcf;
+      border-radius: 13px;
+      padding: 11px 13px;
+    }
+    .person strong { font-size: 1.04rem; }
+    .person small { display: block; color: var(--muted); margin-top: 3px; }
+    .status { font: 700 .76rem/1.2 system-ui, sans-serif; letter-spacing: .02em; }
+    .yes { color: var(--confirmed); }
+    .maybe { color: var(--probable); }
+    .check { color: var(--unknown); }
+    .century {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eee4d6;
+      color: var(--accent);
+      font: 700 .78rem/1.2 system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .facts, .next { margin: 0; padding-left: 1.2em; }
+    .facts li, .next li { margin: 0 0 9px; }
+    .warning { border-left: 4px solid var(--probable); padding-left: 14px; color: #5f4b2b; }
+    footer { color: var(--muted); border-top: 1px solid var(--line); padding: 22px 0 36px; font-size: .9rem; }
+    a { color: var(--accent); }
+    @media (max-width: 420px) {
+      .wrap { width: min(100% - 18px, 940px); }
+      header { padding-top: 28px; }
+      .panel { border-radius: 13px; padding: 15px 12px; }
+      .tree ul { margin-left: 6px; padding-left: 14px; }
+      .tree ul > li::before { left: -14px; width: 12px; }
+      .person { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Родословная Сергановых</h1>
+      <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
+      <p class="date">Последнее обновление: 7 октября 2026 года, 22:28 (BST, Europe/London)</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Как читать дерево</h2>
+      <div class="legend">
+        <span class="yes">✅ подтверждено документом</span>
+        <span class="maybe">🟡 вероятная связь</span>
+        <span class="check">❓ нужно проверить</span>
+      </div>
+      <p>Каждый человек отмечен своим эмодзи. Вложенность показывает поколение; подписи «сын» и «дочь» показывают родительскую связь.</p>
+    </section>
+
+    <section class="panel" id="tree">
+      <h2>Цельное дерево</h2>
+      <ul class="tree">
+        <li>
+          <div class="person"><strong>🧭 Артамон / Артемон Алексеев</strong> <span class="status yes">✅ подтверждено</span><small>📅 1811 · ревизия · Юраково · хозяйство №18</small></div>
+          <ul>
+            <li>
+              <div class="person"><strong>🪵 Парфен / Порфир Артамонович</strong> <span class="status maybe">🟡 вероятно</span><small>📅 около 1815–1816 · ревизия 1858 · жена: 🌾 Ефросинья Карпова</small></div>
+              <ul>
+                <li>
+                  <div class="person"><strong>🛡️ Алексей Парфенович / Порфирьевич</strong> <span class="status yes">✅ подтверждено</span><small>📅 около 1836–1837 · жена: 🌹 Варвара Ивановна · брак 1857, Юраково</small></div>
+                  <ul>
+                    <li><div class="person"><strong>⚓ Сергей Алексеевич</strong> <span class="status yes">✅</span><small>📅 08.10.1867 · близнец</small></div></li>
+                    <li>
+                      <div class="person"><strong>🪶 Яков Алексеевич Серганов</strong> <span class="status yes">✅</span><small>📅 08.10.1867 · близнец · жена: 🌿 Дарья Васильевна Наумкина · брак 1892</small></div>
+                      <ul><li><div class="person"><strong>🎀 Дочь Якова</strong> <span class="status check">❓</span><small>📅 1896 · имя нужно разобрать по оригиналу</small></div></li></ul>
+                    </li>
+                    <li>
+                      <div class="person"><strong>🔨 Максим Алексеевич Серганов</strong> <span class="status maybe">🟡 вероятно</span><small>📅 1892 · поручитель на браке Якова · вероятный сын Алексея и Варвары</small></div>
+                      <ul>
+                        <li><div class="person"><strong>🎈 Дочь Максима</strong> <span class="status check">❓</span><small>📅 1896 · имя, жена и восприемники требуют чтения оригинала</small></div></li>
+                        <li>
+                          <div class="person"><strong>🕰️ Николай Максимович Серганов</strong> <span class="status maybe">🟡 вероятно</span><small>📅 1906 · поздняя ветвь требует документального подтверждения · жена: 🧵 Анна Ивановна</small></div>
+                          <ul>
+                            <li><div class="person"><strong>🌺 Александра Николаевна Серганова</strong><small>📅 1924 · дочь: 🦋 Нина Савченко</small></div></li>
+                            <li><div class="person"><strong>📘 Николай Николаевич</strong><small>сын Николая Максимовича по семейным сведениям</small></div></li>
+                            <li><div class="person"><strong>⚙️ Анатолий Николаевич</strong><small>сын Николая Максимовича · дочь: 🌼 Ольга Серганова</small></div></li>
+                            <li><div class="person"><strong>🚲 Владимир Николаевич</strong><small>сын Николая Максимовича по семейным сведениям</small></div></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><div class="person"><strong>🪨 Назар Артамонович</strong><small>📅 около 1822–1823</small></div></li>
+                <li><div class="person"><strong>🧱 Аврам Артамонович</strong><small>📅 около 1826–1827</small></div></li>
+                <li><div class="person"><strong>🧩 Климент · 🎻 Терентий · 🧰 Дмитрий · 🧺 Матрёна · 🌷 Авдотья</strong><small>другие дети по ревизии 1858 года</small></div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Что подтверждено лучше всего</h2>
+      <ol class="facts">
+        <li>Артамон/Артемон Алексеев записан в Юракове в ревизии 1811 года. Это год ревизии, не год рождения.</li>
+        <li>В ревизии 1858 года записан Парфен Артамонович с женой Ефросиньей Карповой и сыном Алексеем; рядом проходят Назар и Аврам Артамонович.</li>
+        <li>В метрической записи 1857 года Алексей записан как Алексей Порфирьев; его жена — Варвара Ивановна.</li>
+        <li>В 1867 году у Алексея и Варвары записаны близнецы Сергей и Яков, оба родились 8 октября.</li>
+        <li>В 1892 году Яков Алексеевич женился на Дарье Васильевне Наумкиной; Максим Алексеевич указан поручителем.</li>
+        <li>В 1896 году найдены отдельные записи о дочери Максима и дочери Якова.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Что проверять дальше</h2>
+      <p class="warning">Главная неопределённость — прямое соединение Артамона с Парфеном, а также документальное подтверждение Максима как сына Алексея и Варвары.</p>
+      <ol class="next">
+        <li>ГАРО, Ф.129, Оп.32, Д.91 — ревизская сказка 1834 года: искать Артамона и Парфена.</li>
+        <li>Метрическая запись о рождении Алексея за 1836–1837 годы — решить вариант «Парфенович / Порфирьевич».</li>
+        <li>Метрические книги Юракова/Алексеевки за 1872–1874 годы — найти рождение Максима Алексеевича.</li>
+        <li>Полная запись 1896 года о дочери Максима — дочитать имя жены и восприемников.</li>
+        <li>Документ на Николая Максимовича 1906 года — подтвердить родителей.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Рабочая родословная · исходный подробный файл: <a href="РОДОСЛОВНАЯ_СЕРГАНОВЫХ.md">Markdown-версия</a></div>
+  </footer>
+</body>
+</html>
