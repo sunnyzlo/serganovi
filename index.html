@@ -127,7 +127,7 @@
     .tree-viewport.is-dragging { cursor: grabbing; }
     .tree-map {
       display: block;
-      width: 1440px;
+      width: 3400px;
       max-width: none;
       height: auto;
       margin: 0;
@@ -162,7 +162,7 @@
     <div class="wrap">
       <h1>Родословная Сергановых</h1>
       <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
-      <p class="date">Последнее обновление: 8 октября 2026 года, 11:10 (BST, Europe/London)</p>
+      <p class="date">Последнее обновление: 8 октября 2026 года, 11:13 (BST, Europe/London)</p>
     </div>
   </header>
 
@@ -185,216 +185,83 @@
         <span class="tree-zoom" id="tree-zoom-level">100%</span>
         <button type="button" id="tree-zoom-in" aria-label="Увеличить">+</button>
         <button type="button" id="tree-reset" aria-label="Сбросить масштаб и положение">Сбросить</button>
-        <span class="tree-hint">Перетаскивание · pinch двумя пальцами · колесо мыши</span>
+        <span class="tree-hint">Перетаскивание · pinch двумя пальцами</span>
       </div>
       <div class="tree-viewport" id="tree-viewport">
-        <svg class="tree-map" id="main-tree" viewBox="0 0 1440 1030" role="img" aria-labelledby="tree-title tree-desc">
+        <svg class="tree-map" id="main-tree" viewBox="0 0 3400 2100" role="img" aria-labelledby="tree-title tree-desc">
           <title id="tree-title">Родословная Сергановых сверху вниз</title>
-          <desc id="tree-desc">Артамон, Парфен, ветви Дмитрия и Алексея, другие дети Парфена и поздние поколения до Анны.</desc>
+          <desc id="tree-desc">Единое дерево от Артамона через Парфена, его детей и ветви Алексея, Якова, Максима, Дмитрия, Назара и Аврама до поздних потомков.</desc>
 
-          <path class="edge" d="M720 100V150 M720 226V250H165V280 M720 250H860V280 M720 250H1260V280" />
-          <path class="edge" d="M165 362V440 M860 362V410H560V440 M860 410H790V440 M860 410H1030V440" />
-          <path class="edge" d="M790 522V560H675V590 M1030 536V560H895V590 M1030 560H1110V590 M1030 560H1330V590" />
-          <path class="edge" d="M1330 672V710H800V740 M1330 710H975V740 M1330 710H1150V740 M1330 710H1325V740" />
-          <path class="edge" d="M800 802V840 M800 912V930H580V950 M800 930H800V950 M800 930H1020V950" />
+          <path class="edge" d="M220 100V120H1030 M280 120V150 M660 120V150 M1030 120V150" />
+          <path class="edge" d="M280 232V260H3020 M1180 260V300 M1550 260V300 M1930 260V300 M2300 260V300 M2650 260V300 M3020 260V300" />
+          <path class="edge" d="M660 232V300" />
+          <path class="edge" d="M1550 382V420H1180V460 M1550 420H1550V460 M1550 420H1970V460" />
+          <path class="edge" d="M3020 382V460" />
+          <path class="edge" d="M1550 542V580H1180V620 M1550 580H1520V620" />
+          <path class="edge" d="M1970 556V580H1950V620 M1970 580H2300V620 M1970 580H2670V620" />
+          <path class="edge" d="M1520 702V740H840V780 M1520 740H1180V780 M1520 740H1510V780 M1520 740H1840V780 M1520 740H2170V780" />
+          <path class="edge" d="M2670 702V740H2475V780 M2670 740H2745V780 M2670 740H3015V780 M2670 740H3235V780" />
+          <path class="edge" d="M2475 862V940" />
+          <path class="edge" d="M2475 1002V1040H2325V1100 M2475 1040H2625V1100" />
+          <path class="edge" d="M2325 1182V1260" />
+          <path class="edge" d="M840 862V900H775V940 M840 900H1125V940" />
+          <path class="edge" d="M775 1002V1040H650V1100 M775 1040H950V1100" />
+          <path class="edge" d="M1125 1002V1100" />
+          <path class="edge" d="M650 1162V1260 M950 1162V1220H950V1260 M950 1220H1250V1260 M1125 1162V1220H1175V1260" />
+          <path class="edge" d="M950 1322V1360H950V1420 M950 1360H1250V1420" />
 
-          <g>
-            <rect class="node confirmed" x="620" y="30" width="200" height="70" rx="14" />
-            <text class="name" x="720" y="58" text-anchor="middle">🧭 Артамон</text>
-            <text class="meta" x="720" y="82" text-anchor="middle">1811 · подтверждён</text>
-          </g>
-          <g>
-            <rect class="node probable" x="580" y="150" width="280" height="76" rx="14" />
-            <text class="name" x="720" y="180" text-anchor="middle">🪵 Парфен / Порфир</text>
-            <text class="meta" x="720" y="205" text-anchor="middle">ок. 1815–1816 · ревизия 1858</text>
-          </g>
+          <g><rect class="node confirmed" x="100" y="30" width="240" height="70" rx="14" /><text class="name" x="220" y="58" text-anchor="middle">🧭 Артамон</text><text class="meta" x="220" y="82" text-anchor="middle">1811 · подтверждён</text></g>
+          <g><rect class="node probable" x="100" y="150" width="360" height="82" rx="14" /><text class="name" x="280" y="181" text-anchor="middle">🪵 Парфен / Порфир</text><text class="meta" x="280" y="207" text-anchor="middle">ок. 1815–1816 · ревизия 1858</text></g>
+          <g><rect class="node probable" x="500" y="150" width="320" height="82" rx="14" /><text class="name" x="660" y="181" text-anchor="middle">🪨 Назар Артамонович</text><text class="meta" x="660" y="207" text-anchor="middle">ок. 1822 · сын Артамона</text></g>
+          <g><rect class="node probable" x="880" y="150" width="300" height="82" rx="14" /><text class="name" x="1030" y="181" text-anchor="middle">🧱 Аврам Артамонович</text><text class="meta" x="1030" y="207" text-anchor="middle">ок. 1827 · сын Артамона</text></g>
 
-          <g>
-            <rect class="node confirmed" x="40" y="280" width="250" height="82" rx="14" />
-            <text class="name" x="165" y="312" text-anchor="middle">🧒 Дмитрий</text>
-            <text class="meta" x="165" y="337" text-anchor="middle">новорождённый, 1858</text>
-            <text class="meta" x="165" y="356" text-anchor="middle">сын Парфена · ✅</text>
-          </g>
-          <g>
-            <rect class="node probable" x="40" y="440" width="250" height="82" rx="14" />
-            <text class="name" x="165" y="468" text-anchor="middle">🧿 Владимир</text>
-            <text class="meta" x="165" y="492" text-anchor="middle">Дмитриевич · вероятный сын</text>
-            <text class="meta" x="165" y="516" text-anchor="middle">нужна прямая запись</text>
-          </g>
+          <g><rect class="node unknown" x="500" y="300" width="300" height="82" rx="14" /><text class="name" x="650" y="331" text-anchor="middle">🪷 Анастасия</text><text class="meta" x="650" y="357" text-anchor="middle">дочь Назарa · ок. 1847</text></g>
+          <g><rect class="node probable" x="1030" y="300" width="300" height="82" rx="14" /><text class="name" x="1180" y="331" text-anchor="middle">🌷 Авдотья</text><text class="meta" x="1180" y="357" text-anchor="middle">дочь Парфена · ок. 1837</text></g>
+          <g><rect class="node confirmed" x="1320" y="300" width="460" height="82" rx="14" /><text class="name" x="1550" y="331" text-anchor="middle">🛡️ Алексей + 🌹 Варвара</text><text class="meta" x="1550" y="357" text-anchor="middle">ок. 1836–1837 · брак 1857 · сын Парфена</text></g>
+          <g><rect class="node unknown" x="1780" y="300" width="300" height="82" rx="14" /><text class="name" x="1930" y="331" text-anchor="middle">🌸 Аграфена</text><text class="meta" x="1930" y="357" text-anchor="middle">дочь Парфена · ок. 1839</text></g>
+          <g><rect class="node unknown" x="2150" y="300" width="300" height="82" rx="14" /><text class="name" x="2300" y="331" text-anchor="middle">🧩 Климент</text><text class="meta" x="2300" y="357" text-anchor="middle">1849–1857 · умер</text></g>
+          <g><rect class="node unknown" x="2500" y="300" width="300" height="82" rx="14" /><text class="name" x="2650" y="331" text-anchor="middle">🎻 Терентий</text><text class="meta" x="2650" y="357" text-anchor="middle">1850–1855 · умер</text></g>
+          <g><rect class="node probable" x="2850" y="300" width="340" height="82" rx="14" /><text class="name" x="3020" y="331" text-anchor="middle">🧒 Дмитрий</text><text class="meta" x="3020" y="355" text-anchor="middle">Порфирьевич · 1853 / 1858 [?]</text></g>
 
-          <g>
-            <rect class="node confirmed" x="680" y="280" width="360" height="82" rx="14" />
-            <text class="name" x="860" y="312" text-anchor="middle">🛡️ Алексей + 🌹 Варвара</text>
-            <text class="meta" x="860" y="337" text-anchor="middle">ок. 1836–1837 · брак 1857</text>
-            <text class="meta" x="860" y="356" text-anchor="middle">сын Парфена · ✅</text>
-          </g>
-          <g>
-            <rect class="node confirmed" x="470" y="440" width="180" height="82" rx="14" />
-            <text class="name" x="560" y="472" text-anchor="middle">⚓ Сергей</text>
-            <text class="meta" x="560" y="497" text-anchor="middle">1867 · близнец</text>
-          </g>
-          <g>
-            <rect class="node confirmed" x="690" y="440" width="200" height="82" rx="14" />
-            <text class="name" x="790" y="472" text-anchor="middle">🪶 Яков</text>
-            <text class="meta" x="790" y="497" text-anchor="middle">1867 · жена Дарья</text>
-          </g>
-          <g>
-            <rect class="node probable" x="930" y="440" width="200" height="96" rx="14" />
-            <text class="name" x="1030" y="472" text-anchor="middle">🔨 Максим</text>
-            <text class="meta compact" x="1030" y="495" text-anchor="middle">жена Елена Дмитриевна</text>
-            <text class="meta" x="1030" y="516" text-anchor="middle">поручитель в 1892</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="1120" y="280" width="280" height="96" rx="14" />
-            <text class="name compact" x="1260" y="309" text-anchor="middle">Другие дети Парфена</text>
-            <text class="meta" x="1260" y="333" text-anchor="middle">🪨 Назар · 🧱 Аврам</text>
-            <text class="meta" x="1260" y="353" text-anchor="middle">🧩 Климент · 🎻 Терентий</text>
-            <text class="meta" x="1260" y="373" text-anchor="middle">🧺 Матрёна · 🌷 Авдотья</text>
-          </g>
+          <g><rect class="node confirmed" x="1030" y="460" width="300" height="82" rx="14" /><text class="name" x="1180" y="491" text-anchor="middle">⚓ Сергей</text><text class="meta" x="1180" y="517" text-anchor="middle">1867 · близнец</text></g>
+          <g><rect class="node confirmed" x="1360" y="460" width="380" height="82" rx="14" /><text class="name" x="1550" y="491" text-anchor="middle">🪶 Яков</text><text class="meta" x="1550" y="517" text-anchor="middle">1867 · жена Дарья</text></g>
+          <g><rect class="node probable" x="1790" y="460" width="360" height="96" rx="14" /><text class="name" x="1970" y="491" text-anchor="middle">🔨 Максим</text><text class="meta compact" x="1970" y="515" text-anchor="middle">жена 🪻 Елена Дмитриевна</text><text class="meta" x="1970" y="537" text-anchor="middle">поручитель в 1892</text></g>
+          <g><rect class="node probable" x="2850" y="460" width="340" height="82" rx="14" /><text class="name" x="3020" y="491" text-anchor="middle">🧿 Владимир</text><text class="meta" x="3020" y="515" text-anchor="middle">Дмитриевич · вероятный сын</text></g>
 
-          <g>
-            <rect class="node unknown" x="575" y="590" width="200" height="82" rx="14" />
-            <text class="name" x="675" y="622" text-anchor="middle">🎀 Дочь Якова</text>
-            <text class="meta" x="675" y="647" text-anchor="middle">1896 · имя [?]</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="800" y="590" width="190" height="82" rx="14" />
-            <text class="name compact" x="895" y="622" text-anchor="middle">🎈 Дочь Максима</text>
-            <text class="meta" x="895" y="647" text-anchor="middle">1896 · имя [?]</text>
-          </g>
-          <g>
-            <rect class="node confirmed" x="1020" y="590" width="180" height="82" rx="14" />
-            <text class="name" x="1110" y="622" text-anchor="middle">🧑 Андрей</text>
-            <text class="meta" x="1110" y="647" text-anchor="middle">1896 · сын Максима</text>
-          </g>
-          <g>
-            <rect class="node probable" x="1240" y="590" width="180" height="82" rx="14" />
-            <text class="name" x="1330" y="615" text-anchor="middle">🕰️ Николай</text>
-            <text class="meta" x="1330" y="638" text-anchor="middle">Максимович · 1906</text>
-            <text class="meta" x="1330" y="658" text-anchor="middle">родители [?]</text>
-          </g>
+          <g><rect class="node unknown" x="1030" y="620" width="300" height="82" rx="14" /><text class="name compact" x="1180" y="651" text-anchor="middle">🎀 Дочь Якова</text><text class="meta" x="1180" y="677" text-anchor="middle">1896 · имя [?]</text></g>
+          <g><rect class="node unknown" x="1330" y="620" width="380" height="82" rx="14" /><text class="name" x="1520" y="651" text-anchor="middle">🧔 Фёдор Яковлевич</text><text class="meta" x="1520" y="677" text-anchor="middle">1903–1943 · ветка из SVG</text></g>
+          <g><rect class="node unknown" x="1800" y="620" width="300" height="82" rx="14" /><text class="name compact" x="1950" y="651" text-anchor="middle">🎈 Дочь Максима</text><text class="meta" x="1950" y="677" text-anchor="middle">1896 · имя [?]</text></g>
+          <g><rect class="node confirmed" x="2150" y="620" width="300" height="82" rx="14" /><text class="name" x="2300" y="651" text-anchor="middle">🧑 Андрей</text><text class="meta" x="2300" y="677" text-anchor="middle">1896 · сын Максима</text></g>
+          <g><rect class="node probable" x="2500" y="620" width="340" height="82" rx="14" /><text class="name" x="2670" y="647" text-anchor="middle">🕰️ Николай</text><text class="meta" x="2670" y="670" text-anchor="middle">Максимович · 1906</text><text class="meta" x="2670" y="690" text-anchor="middle">родители [?]</text></g>
 
-          <g>
-            <rect class="node unknown" x="720" y="740" width="160" height="62" rx="14" />
-            <text class="name" x="800" y="767" text-anchor="middle">🌺 Александра</text>
-            <text class="meta" x="800" y="789" text-anchor="middle">дочь Николая</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="895" y="740" width="160" height="62" rx="14" />
-            <text class="name" x="975" y="767" text-anchor="middle">📘 Николай</text>
-            <text class="meta" x="975" y="789" text-anchor="middle">семейные сведения</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="1070" y="740" width="160" height="62" rx="14" />
-            <text class="name" x="1150" y="767" text-anchor="middle">⚙️ Анатолий</text>
-            <text class="meta" x="1150" y="789" text-anchor="middle">→ Ольга</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="1245" y="740" width="160" height="62" rx="14" />
-            <text class="name" x="1325" y="767" text-anchor="middle">🚲 Владимир</text>
-            <text class="meta" x="1325" y="789" text-anchor="middle">семейные сведения</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="700" y="840" width="200" height="72" rx="14" />
-            <text class="name" x="800" y="870" text-anchor="middle">🦋 Нина</text>
-            <text class="meta" x="800" y="895" text-anchor="middle">дочь Александры</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="490" y="950" width="180" height="62" rx="14" />
-            <text class="name" x="580" y="977" text-anchor="middle">🧶 Оксана</text>
-            <text class="meta" x="580" y="999" text-anchor="middle">дочь Нины</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="710" y="950" width="180" height="62" rx="14" />
-            <text class="name" x="800" y="977" text-anchor="middle">🧍 Александр</text>
-            <text class="meta" x="800" y="999" text-anchor="middle">сын Нины</text>
-          </g>
-          <g>
-            <rect class="node unknown" x="930" y="950" width="180" height="62" rx="14" />
-            <text class="name" x="1020" y="977" text-anchor="middle">🍼 Анна</text>
-            <text class="meta" x="1020" y="999" text-anchor="middle">дочь Оксаны</text>
-          </g>
+          <g><rect class="node unknown" x="690" y="780" width="300" height="82" rx="14" /><text class="name compact" x="840" y="811" text-anchor="middle">👩‍🦰 Антонина Фёдоровна</text><text class="meta" x="840" y="837" text-anchor="middle">1927 · дочь Фёдора</text></g>
+          <g><rect class="node unknown" x="1030" y="780" width="300" height="82" rx="14" /><text class="name compact" x="1180" y="811" text-anchor="middle">👩 Нина Фёдоровна</text><text class="meta" x="1180" y="837" text-anchor="middle">1942 · дочь Фёдора</text></g>
+          <g><rect class="node unknown" x="1360" y="780" width="300" height="82" rx="14" /><text class="name compact" x="1510" y="811" text-anchor="middle">🩷 Валентина Фёдоровна</text><text class="meta" x="1510" y="837" text-anchor="middle">дочь Фёдора</text></g>
+          <g><rect class="node unknown" x="1690" y="780" width="300" height="82" rx="14" /><text class="name compact" x="1840" y="811" text-anchor="middle">🌻 Зинаида Фёдоровна</text><text class="meta" x="1840" y="837" text-anchor="middle">дочь Фёдора</text></g>
+          <g><rect class="node unknown" x="2020" y="780" width="300" height="82" rx="14" /><text class="name compact" x="2170" y="811" text-anchor="middle">🧑‍🦱 Леонид Фёдорович</text><text class="meta" x="2170" y="837" text-anchor="middle">сын Фёдора</text></g>
+          <g><rect class="node unknown" x="2325" y="780" width="300" height="82" rx="14" /><text class="name" x="2475" y="811" text-anchor="middle">🌺 Александра</text><text class="meta" x="2475" y="837" text-anchor="middle">дочь Николая</text></g>
+          <g><rect class="node unknown" x="2595" y="780" width="300" height="82" rx="14" /><text class="name" x="2745" y="811" text-anchor="middle">📘 Николай</text><text class="meta" x="2745" y="837" text-anchor="middle">семейные сведения</text></g>
+          <g><rect class="node unknown" x="2865" y="780" width="300" height="82" rx="14" /><text class="name" x="3015" y="811" text-anchor="middle">⚙️ Анатолий</text><text class="meta" x="3015" y="837" text-anchor="middle">→ Ольга</text></g>
+          <g><rect class="node unknown" x="3090" y="780" width="290" height="82" rx="14" /><text class="name" x="3235" y="811" text-anchor="middle">🚲 Владимир</text><text class="meta" x="3235" y="837" text-anchor="middle">семейные сведения</text></g>
+
+          <g><rect class="node unknown" x="625" y="940" width="300" height="82" rx="14" /><text class="name compact" x="775" y="971" text-anchor="middle">🍒 Раиса Михайловна</text><text class="meta" x="775" y="997" text-anchor="middle">1947 · дочь Антонины</text></g>
+          <g><rect class="node unknown" x="975" y="940" width="300" height="82" rx="14" /><text class="name compact" x="1125" y="971" text-anchor="middle">🎨 Татьяна Михайловна</text><text class="meta" x="1125" y="997" text-anchor="middle">1950 · дочь Антонины</text></g>
+          <g><rect class="node unknown" x="2325" y="940" width="300" height="82" rx="14" /><text class="name" x="2475" y="971" text-anchor="middle">🦋 Нина</text><text class="meta" x="2475" y="997" text-anchor="middle">дочь Александры</text></g>
+
+          <g><rect class="node unknown" x="500" y="1100" width="300" height="82" rx="14" /><text class="name compact" x="650" y="1131" text-anchor="middle">🫧 Елена Валерьевна</text><text class="meta" x="650" y="1157" text-anchor="middle">дочь Раисы</text></g>
+          <g><rect class="node unknown" x="800" y="1100" width="300" height="82" rx="14" /><text class="name compact" x="950" y="1131" text-anchor="middle">🪴 Ирина Валерьевна</text><text class="meta" x="950" y="1157" text-anchor="middle">дочь Раисы</text></g>
+          <g><rect class="node unknown" x="1000" y="1100" width="300" height="82" rx="14" /><text class="name compact" x="1150" y="1131" text-anchor="middle">🌙 Светлана Дмитриевна</text><text class="meta" x="1150" y="1157" text-anchor="middle">дочь Татьяны</text></g>
+          <g><rect class="node unknown" x="2175" y="1100" width="300" height="82" rx="14" /><text class="name" x="2325" y="1131" text-anchor="middle">🧶 Оксана</text><text class="meta" x="2325" y="1157" text-anchor="middle">дочь Нины</text></g>
+          <g><rect class="node unknown" x="2475" y="1100" width="300" height="82" rx="14" /><text class="name" x="2625" y="1131" text-anchor="middle">🧍 Александр</text><text class="meta" x="2625" y="1157" text-anchor="middle">сын Нины</text></g>
+
+          <g><rect class="node unknown" x="500" y="1260" width="300" height="82" rx="14" /><text class="name compact" x="650" y="1291" text-anchor="middle">🗿 Иван Андреевич</text><text class="meta" x="650" y="1317" text-anchor="middle">ребёнок Елены</text></g>
+          <g><rect class="node unknown" x="800" y="1260" width="300" height="82" rx="14" /><text class="name compact" x="950" y="1291" text-anchor="middle">🧑‍💼 Александр Евгеньевич</text><text class="meta" x="950" y="1317" text-anchor="middle">сын Ирины</text></g>
+          <g><rect class="node unknown" x="1000" y="1260" width="300" height="82" rx="14" /><text class="name compact" x="1150" y="1291" text-anchor="middle">🦢 Анастасия Алексеевна</text><text class="meta" x="1150" y="1317" text-anchor="middle">дочь Светланы</text></g>
+          <g><rect class="node unknown" x="2175" y="1260" width="300" height="82" rx="14" /><text class="name" x="2325" y="1291" text-anchor="middle">🍼 Анна</text><text class="meta" x="2325" y="1317" text-anchor="middle">дочь Оксаны</text></g>
+          <g><rect class="node unknown" x="800" y="1420" width="300" height="82" rx="14" /><text class="name compact" x="950" y="1451" text-anchor="middle">🛹 Артём Александрович</text><text class="meta" x="950" y="1477" text-anchor="middle">2014 · сын Александра</text></g>
+          <g><rect class="node unknown" x="1100" y="1420" width="300" height="82" rx="14" /><text class="name compact" x="1250" y="1451" text-anchor="middle">🏖️ Даниил Александрович</text><text class="meta" x="1250" y="1477" text-anchor="middle">2016 · сын Александра</text></g>
         </svg>
       </div>
-    </section>
-
-    <section class="panel" id="supplemental-branch">
-      <h2>Дополнительный фрагмент семьи</h2>
-      <p class="subtitle">Перенесено из присланного SVG в наш формат. Это отдельная семейная схема: её связи и даты нужно сверять с метрическими книгами, поэтому они не заменяют основное документальное дерево.</p>
-      <ul class="tree supplemental-tree">
-        <li>
-          <span class="person"><strong>🧭 Артамон Серганов</strong><small>верхняя карточка исходного SVG</small></span>
-          <ul>
-            <li>
-              <span class="person"><strong>🪵 Порфирий Артамонович</strong><small>00.00.1815 · сын Артамона</small></span>
-              <ul>
-                <li><span class="person"><strong>🌷 Авдотья Порфирьевна</strong><small>00.00.1837 · внучка</small></span></li>
-                <li>
-                  <span class="person"><strong>🛡️ Алексей Порфирьевич</strong><small>00.00.1838 · внук</small></span>
-                  <ul>
-                    <li><span class="person"><strong>⚓ Сергей Алексеевич</strong><small>08.10.1867 · правнук</small></span></li>
-                    <li>
-                      <span class="person"><strong>🪶 Яков Алексеевич</strong><small>08.10.1867 · правнук</small></span>
-                      <ul>
-                        <li>
-                          <span class="person"><strong>🧔 Фёдор Яковлевич</strong><small>09.11.1903 — 08.01.1943 · праправнук</small></span>
-                          <ul>
-                            <li><span class="person"><strong>👩‍🦰 Илюнина Антонина Фёдоровна</strong><small>27.02.1927</small></span>
-                              <ul>
-                                <li><span class="person"><strong>🍒 Борщ Раиса Михайловна</strong><small>11.02.1947</small></span>
-                                  <ul>
-                                    <li><span class="person"><strong>🫧 Борщ Елена Валерьевна</strong><small>28.02.1973</small></span>
-                                      <ul><li><span class="person"><strong>🗿 Винницкий Иван Андреевич</strong><small>дата не указана</small></span></li></ul>
-                                    </li>
-                                    <li>
-                                      <span class="person"><strong>🪴 Захарова Ирина Валерьевна</strong><small>01.12.1967</small></span>
-                                      <ul>
-                                        <li><span class="person"><strong>🧑‍💼 Захаров Александр Евгеньевич</strong><small>25.08.1988</small></span>
-                                          <ul>
-                                            <li><span class="person"><strong>🛹 Захаров Артём Александрович</strong><small>30.05.2014</small></span></li>
-                                            <li><span class="person"><strong>🏖️ Захаров Даниил Александрович</strong><small>04.10.2016</small></span></li>
-                                          </ul>
-                                        </li>
-                                        <li><span class="person"><strong>🎒 Панкратова Валерия Алексеевна</strong><small>27.01.2002</small></span></li>
-                                      </ul>
-                                    </li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <span class="person"><strong>🎨 Коновалова Татьяна Михайловна</strong><small>10.03.1950</small></span>
-                                  <ul>
-                                    <li><span class="person"><strong>🌙 Яковлева Светлана Дмитриевна</strong><small>дата не указана</small></span>
-                                      <ul><li><span class="person"><strong>🦢 Яковлева Анастасия Алексеевна</strong><small>дата не указана</small></span></li></ul>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </li>
-                            <li><span class="person"><strong>👩 Абрамова Нина Фёдоровна</strong><small>01.01.1942</small></span></li>
-                            <li><span class="person"><strong>🩷 Серганова Валентина Фёдоровна</strong><small>дата не указана</small></span></li>
-                            <li><span class="person"><strong>🌻 Серганова Зинаида Фёдоровна</strong><small>дата не указана</small></span></li>
-                            <li><span class="person"><strong>🧑‍🦱 Серганов Леонид Фёдорович</strong><small>дата не указана</small></span></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><span class="person"><strong>🌸 Серганова Аграфена Артамоновна</strong><small>00.00.1839 · внучка</small></span></li>
-                <li><span class="person"><strong>🧩 Серганов Климент Порфирьевич</strong><small>00.00.1849 — 00.00.1857 · умер</small></span></li>
-                <li><span class="person"><strong>🎻 Серганов Терентий Порфирьевич</strong><small>00.00.1850 — 00.00.1855 · умер</small></span></li>
-                <li><span class="person"><strong>🧒 Серганов Дмитрий Порфирьевич</strong><small>00.00.1853 · внук</small></span></li>
-              </ul>
-            </li>
-            <li>
-              <span class="person"><strong>🪨 Назар Артамонович</strong><small>00.00.1822 · сын Артамона</small></span>
-              <ul><li><span class="person"><strong>🪷 Серганова Анастасия Назаровна</strong><small>00.00.1847 · внучка</small></span></li></ul>
-            </li>
-            <li><span class="person"><strong>🧱 Аврам Артамонович</strong><small>00.00.1827 · сын Артамона</small></span></li>
-          </ul>
-        </li>
-      </ul>
-      <p class="warning">В SVG Фёдор Яковлевич и его потомки показаны как продолжение ветви Якова. Я сохранил эту связь как семейную схему, но её нужно отдельно подтвердить документами.</p>
     </section>
 
     <section class="panel">
