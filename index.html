@@ -162,7 +162,7 @@
     <div class="wrap">
       <h1>Родословная Сергановых</h1>
       <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
-      <p class="date">Последнее обновление: 8 октября 2026 года, 11:07 (BST, Europe/London)</p>
+      <p class="date">Последнее обновление: 8 октября 2026 года, 11:10 (BST, Europe/London)</p>
     </div>
   </header>
 
@@ -470,11 +470,6 @@
       zoomIn?.addEventListener('click', () => zoomAt(zoom * 1.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
       zoomOut?.addEventListener('click', () => zoomAt(zoom / 1.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
       reset?.addEventListener('click', () => { zoom = 1; offsetX = 0; offsetY = 0; render(); });
-      viewport.addEventListener('wheel', event => {
-        event.preventDefault();
-        const rect = viewport.getBoundingClientRect();
-        zoomAt(zoom * (event.deltaY < 0 ? 1.12 : 0.89), event.clientX - rect.left, event.clientY - rect.top);
-      }, { passive: false });
       viewport.addEventListener('pointerdown', event => {
         viewport.setPointerCapture(event.pointerId);
         pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
