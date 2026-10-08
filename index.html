@@ -113,26 +113,6 @@
     .tree-map .name { font-size: 20px; font-weight: 700; }
     .tree-map .name.compact { font-size: 18px; }
     .tree-map .meta { font-size: 15px; fill: var(--muted); }
-    .emoji-index {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .emoji-item {
-      display: grid;
-      grid-template-columns: 2.1rem 1fr;
-      align-items: start;
-      gap: 8px;
-      min-width: 0;
-      padding: 10px 12px;
-      background: #fffefa;
-      border: 1px solid #e6ddcf;
-      border-radius: 11px;
-    }
-    .emoji-item .emoji { font-size: 1.35rem; line-height: 1.2; }
-    .emoji-item strong { display: block; line-height: 1.25; overflow-wrap: anywhere; }
-    .emoji-item small { display: block; color: var(--muted); margin-top: 3px; line-height: 1.3; }
     footer { color: var(--muted); border-top: 1px solid var(--line); padding: 22px 0 36px; font-size: .9rem; }
     a { color: var(--accent); }
     @media (max-width: 420px) {
@@ -150,7 +130,7 @@
     <div class="wrap">
       <h1>Родословная Сергановых</h1>
       <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
-      <p class="date">Последнее обновление: 8 октября 2026 года, 10:01 (BST, Europe/London)</p>
+      <p class="date">Последнее обновление: 8 октября 2026 года, 10:04 (BST, Europe/London)</p>
     </div>
   </header>
 
@@ -273,53 +253,18 @@
       </div>
     </section>
 
-    <section class="panel" id="emoji-index">
-      <h2>Справочник имён и эмодзи</h2>
-      <p class="subtitle">Этот список находится вне схемы. Эмодзи здесь совпадают с эмодзи в дереве, поэтому людей можно быстро сопоставлять; одинаковые имена разных людей отмечены разными значками.</p>
-      <div class="emoji-index">
-        <div class="emoji-item"><span class="emoji">🧭</span><div><strong>Артамон / Артемон Алексеев</strong><small>старшее поколение · ревизия 1811</small></div></div>
-        <div class="emoji-item"><span class="emoji">🪵</span><div><strong>Парфен / Порфир Артамонович</strong><small>вероятная связь</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧒</span><div><strong>Дмитрий Парфенович</strong><small>сын Парфена · новорождённый в 1858</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧿</span><div><strong>Владимир Дмитриевич</strong><small>вероятный сын Дмитрия</small></div></div>
-        <div class="emoji-item"><span class="emoji">🛡️</span><div><strong>Алексей Парфенович / Порфирьевич</strong><small>сын Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">🌹</span><div><strong>Варвара Ивановна</strong><small>жена Алексея</small></div></div>
-        <div class="emoji-item"><span class="emoji">⚓</span><div><strong>Сергей Алексеевич</strong><small>близнец Якова · 1867</small></div></div>
-        <div class="emoji-item"><span class="emoji">🪶</span><div><strong>Яков Алексеевич Серганов</strong><small>жена Дарья · 1867</small></div></div>
-        <div class="emoji-item"><span class="emoji">🌿</span><div><strong>Дарья Васильевна Наумкина</strong><small>жена Якова · брак 1892</small></div></div>
-        <div class="emoji-item"><span class="emoji">🔨</span><div><strong>Максим Алексеевич Серганов</strong><small>вероятный сын Алексея · поручитель в 1892</small></div></div>
-        <div class="emoji-item"><span class="emoji">🎀</span><div><strong>Дочь Якова</strong><small>рождение 1896 · имя не прочитано</small></div></div>
-        <div class="emoji-item"><span class="emoji">🎈</span><div><strong>Дочь Максима</strong><small>рождение 1896 · имя не прочитано</small></div></div>
-        <div class="emoji-item"><span class="emoji">🕰️</span><div><strong>Николай Максимович Серганов</strong><small>рождение 1906 · родители требуют проверки</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧵</span><div><strong>Анна Ивановна</strong><small>жена Николая Максимовича</small></div></div>
-        <div class="emoji-item"><span class="emoji">🌺</span><div><strong>Александра Николаевна</strong><small>дочь Николая · дочь Нина</small></div></div>
-        <div class="emoji-item"><span class="emoji">🦋</span><div><strong>Нина Савченко</strong><small>дочь Александры</small></div></div>
-        <div class="emoji-item"><span class="emoji">📘</span><div><strong>Николай Николаевич</strong><small>семейные сведения</small></div></div>
-        <div class="emoji-item"><span class="emoji">⚙️</span><div><strong>Анатолий Николаевич</strong><small>дочь Ольга</small></div></div>
-        <div class="emoji-item"><span class="emoji">🌼</span><div><strong>Ольга Серганова</strong><small>дочь Анатолия</small></div></div>
-        <div class="emoji-item"><span class="emoji">🚲</span><div><strong>Владимир Николаевич</strong><small>семейные сведения</small></div></div>
-        <div class="emoji-item"><span class="emoji">🪨</span><div><strong>Назар Артамонович</strong><small>другой ребёнок Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧱</span><div><strong>Аврам Артамонович</strong><small>другой ребёнок Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧩</span><div><strong>Климент</strong><small>другой ребёнок Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">🎻</span><div><strong>Терентий</strong><small>другой ребёнок Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">🧺</span><div><strong>Матрёна</strong><small>другая дочь Парфена · не смешивать с Матрёной Максимовной</small></div></div>
-        <div class="emoji-item"><span class="emoji">🌷</span><div><strong>Авдотья</strong><small>другая дочь Парфена</small></div></div>
-        <div class="emoji-item"><span class="emoji">👤</span><div><strong>Ефим Серганов</strong><small>отдельная находка 1811 · связь не установлена</small></div></div>
-        <div class="emoji-item"><span class="emoji">👩</span><div><strong>Матрёна Максимовна Серганова</strong><small>восприемница в записи 1901 · вдовица</small></div></div>
-      </div>
-    </section>
-
     <section class="panel">
       <h2>Что подтверждено лучше всего</h2>
       <ol class="facts">
-        <li>Артамон/Артемон Алексеев записан в Юракове в ревизии 1811 года. Это год ревизии, не год рождения.</li>
-        <li>В ревизии 1858 года записан Парфен Артамонович с женой Ефросиньей Карповой и сыном Алексеем; рядом проходят Назар и Аврам Артамонович.</li>
-        <li>В метрической записи 1857 года Алексей записан как Алексей Порфирьев; его жена — Варвара Ивановна.</li>
-        <li>В 1867 году у Алексея и Варвары записаны близнецы Сергей и Яков, оба родились 8 октября.</li>
-        <li>В 1892 году Яков Алексеевич женился на Дарье Васильевне Наумкиной; Максим Алексеевич указан поручителем.</li>
-        <li>В 1896 году найдены отдельные записи о дочери Максима и дочери Якова.</li>
+        <li>🧭 Артамон/Артемон Алексеев записан в Юракове в ревизии 1811 года. Это год ревизии, не год рождения.</li>
+        <li>В ревизии 1858 года записан 🪵 Парфен Артамонович с женой Ефросиньей Карповой и сыном 🛡️ Алексеем; рядом проходят 🪨 Назар и 🧱 Аврам Артамонович.</li>
+        <li>В метрической записи 1857 года 🛡️ Алексей записан как Алексей Порфирьев; его жена — 🌹 Варвара Ивановна.</li>
+        <li>В 1867 году у 🛡️ Алексея и 🌹 Варвары записаны близнецы ⚓ Сергей и 🪶 Яков, оба родились 8 октября.</li>
+        <li>В 1892 году 🪶 Яков Алексеевич женился на Дарье Васильевне Наумкиной; 🔨 Максим Алексеевич указан поручителем.</li>
+        <li>В 1896 году найдены отдельные записи о 🎈 дочери Максима и 🎀 дочери Якова.</li>
         <li>Перепроверка страницы 50: две Евдокии — разные записи; Максим в них не подтверждён. Мария Филиппова Серганова указана восприемницей второй записи.</li>
         <li>Запись об умершей на фото 07, вероятно, относится к жене Алексея Порфирьевича; имя предварительно читается как Агриппина[?], а не Евдокия.</li>
-        <li>В ревизии 1858 года Дмитрий прямо указан как новорождённый сын Парфена; Владимир Дмитриевич — вероятное продолжение этой ветки.</li>
+        <li>В ревизии 1858 года 🧒 Дмитрий прямо указан как новорождённый сын Парфена; 🧿 Владимир Дмитриевич — вероятное продолжение этой ветки.</li>
       </ol>
     </section>
 
@@ -327,13 +272,13 @@
       <h2>Что проверять дальше</h2>
       <p class="warning">Главные неопределённости — прямое соединение Артамона с Парфеном, документальное подтверждение Максима как сына Алексея и Варвары, связь Николая Максимовича и подтверждение Владимира Дмитриевича как сына Дмитрия.</p>
       <ol class="next">
-        <li>Документ на Николая Максимовича 1906 года — подтвердить родителей.</li>
-        <li>Метрическая запись о браке Максима — получить имя жены, возраст и поручителей.</li>
-        <li>Полная запись 1896 года о дочери Максима — дочитать имя матери и восприемников.</li>
+        <li>Документ на 🕰️ Николая Максимовича 1906 года — подтвердить родителей.</li>
+        <li>Метрическая запись о браке 🔨 Максима — получить имя жены, возраст и поручителей.</li>
+        <li>Полная запись 1896 года о 🎈 дочери Максима — дочитать имя матери и восприемников.</li>
         <li>Запись рождения Матрёны Максимовны — не смешивать её с Марией Филипповой Сергановой.</li>
-        <li>Метрическая запись о рождении Владимира Дмитриевича — найти прямое указание на Дмитрия как отца.</li>
-        <li>ГАРО, Ф.129, Оп.32, Д.91 — ревизская сказка 1834 года: искать Артамона и Парфена.</li>
-        <li>Метрическая запись о рождении Алексея за 1836–1837 годы — решить вариант «Парфенович / Порфирьевич».</li>
+        <li>Метрическая запись о рождении 🧿 Владимира Дмитриевича — найти прямое указание на Дмитрия как отца.</li>
+        <li>ГАРО, Ф.129, Оп.32, Д.91 — ревизская сказка 1834 года: искать 🧭 Артамона и 🪵 Парфена.</li>
+        <li>Метрическая запись о рождении 🛡️ Алексея за 1836–1837 годы — решить вариант «Парфенович / Порфирьевич».</li>
       </ol>
     </section>
   </main>
