@@ -27,7 +27,7 @@
       color: var(--ink);
       font: 16px/1.55 Georgia, "Times New Roman", serif;
     }
-    .wrap { width: min(100% - 28px, 940px); margin: 0 auto; }
+    .wrap { width: min(100% - 28px, 1440px); margin: 0 auto; }
     header {
       padding: 42px 0 28px;
       border-bottom: 1px solid var(--line);
@@ -89,10 +89,32 @@
     .facts, .next { margin: 0; padding-left: 1.2em; }
     .facts li, .next li { margin: 0 0 9px; }
     .warning { border-left: 4px solid var(--probable); padding-left: 14px; color: #5f4b2b; }
+    .tree-scroll {
+      width: 100%;
+      max-width: 1440px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+    }
+    .tree-map {
+      display: block;
+      width: 1440px;
+      max-width: none;
+      height: auto;
+    }
+    .tree-map .edge { stroke: var(--line); stroke-width: 3; fill: none; }
+    .tree-map .node { fill: #fffefa; stroke: #e6ddcf; stroke-width: 2; }
+    .tree-map .confirmed { stroke: var(--confirmed); }
+    .tree-map .probable { stroke: var(--probable); }
+    .tree-map .unknown { stroke: var(--unknown); stroke-dasharray: 7 5; }
+    .tree-map text { fill: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+    .tree-map .name { font-size: 20px; font-weight: 700; }
+    .tree-map .meta { font-size: 15px; fill: var(--muted); }
     footer { color: var(--muted); border-top: 1px solid var(--line); padding: 22px 0 36px; font-size: .9rem; }
     a { color: var(--accent); }
     @media (max-width: 420px) {
-      .wrap { width: min(100% - 18px, 940px); }
+      .wrap { width: min(100% - 18px, 1440px); }
       header { padding-top: 28px; }
       .panel { border-radius: 13px; padding: 15px 12px; }
       .tree ul { margin-left: 6px; padding-left: 14px; }
@@ -106,7 +128,7 @@
     <div class="wrap">
       <h1>Родословная Сергановых</h1>
       <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
-      <p class="date">Последнее обновление: 8 октября 2026 года, 09:41 (BST, Europe/London)</p>
+      <p class="date">Последнее обновление: 8 октября 2026 года, 09:47 (BST, Europe/London)</p>
     </div>
   </header>
 
@@ -123,50 +145,102 @@
 
     <section class="panel" id="tree">
       <h2>Цельное дерево</h2>
-      <ul class="tree">
-        <li>
-          <div class="person"><strong>🧭 Артамон / Артемон Алексеев</strong> <span class="status yes">✅ подтверждено</span><small>📅 1811 · ревизия · Юраково · хозяйство №18</small></div>
-          <ul>
-            <li>
-              <div class="person"><strong>🪵 Парфен / Порфир Артамонович</strong> <span class="status maybe">🟡 вероятно</span><small>📅 около 1815–1816 · ревизия 1858 · жена: 🌾 Ефросинья Карпова</small></div>
-              <ul>
-                <li>
-                  <div class="person"><strong>🛡️ Алексей Парфенович / Порфирьевич</strong> <span class="status yes">✅ подтверждено</span><small>📅 около 1836–1837 · жена: 🌹 Варвара Ивановна · брак 1857, Юраково</small></div>
-                  <ul>
-                    <li><div class="person"><strong>⚓ Сергей Алексеевич</strong> <span class="status yes">✅</span><small>📅 08.10.1867 · близнец</small></div></li>
-                    <li>
-                      <div class="person"><strong>🪶 Яков Алексеевич Серганов</strong> <span class="status yes">✅</span><small>📅 08.10.1867 · близнец · жена: 🌿 Дарья Васильевна Наумкина · брак 1892</small></div>
-                      <ul><li><div class="person"><strong>🎀 Дочь Якова</strong> <span class="status check">❓</span><small>📅 1896 · имя нужно разобрать по оригиналу</small></div></li></ul>
-                    </li>
-                    <li>
-                      <div class="person"><strong>🔨 Максим Алексеевич Серганов</strong> <span class="status maybe">🟡 вероятно</span><small>📅 1892 · поручитель на браке Якова · вероятный сын Алексея и Варвары</small></div>
-                      <ul>
-                        <li><div class="person"><strong>🎈 Дочь Максима</strong> <span class="status check">❓</span><small>📅 1896 · имя, жена и восприемники требуют чтения оригинала</small></div></li>
-                        <li>
-                          <div class="person"><strong>🕰️ Николай Максимович Серганов</strong> <span class="status maybe">🟡 вероятно</span><small>📅 1906 · поздняя ветвь требует документального подтверждения · жена: 🧵 Анна Ивановна</small></div>
-                          <ul>
-                            <li><div class="person"><strong>🌺 Александра Николаевна Серганова</strong><small>📅 1924 · дочь: 🦋 Нина Савченко</small></div></li>
-                            <li><div class="person"><strong>📘 Николай Николаевич</strong><small>сын Николая Максимовича по семейным сведениям</small></div></li>
-                            <li><div class="person"><strong>⚙️ Анатолий Николаевич</strong><small>сын Николая Максимовича · дочь: 🌼 Ольга Серганова</small></div></li>
-                            <li><div class="person"><strong>🚲 Владимир Николаевич</strong><small>сын Николая Максимовича по семейным сведениям</small></div></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div class="person"><strong>🧒 Дмитрий Парфенович</strong> <span class="status yes">✅ подтверждено</span><small>📅 новорождённый в ревизии 1858 года · сын Парфена</small></div>
-                  <ul><li><div class="person"><strong>🧿 Владимир Дмитриевич</strong> <span class="status maybe">🟡 вероятно</span><small>вероятный сын Дмитрия · нужна прямая метрическая запись</small></div></li></ul>
-                </li>
-                <li><div class="person"><strong>🪨 Назар Артамонович</strong><small>📅 около 1822–1823</small></div></li>
-                <li><div class="person"><strong>🧱 Аврам Артамонович</strong><small>📅 около 1826–1827</small></div></li>
-                <li><div class="person"><strong>🧩 Климент · 🎻 Терентий · 🧺 Матрёна · 🌷 Авдотья</strong><small>другие дети по ревизии 1858 года</small></div></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <p class="subtitle">Старшие поколения сверху, младшие снизу. На телефоне схему можно прокручивать горизонтально.</p>
+      <div class="tree-scroll">
+        <svg class="tree-map" viewBox="0 0 1440 820" role="img" aria-labelledby="tree-title tree-desc">
+          <title id="tree-title">Родословная Сергановых сверху вниз</title>
+          <desc id="tree-desc">Артамон, Парфен, ветви Дмитрия и Алексея, затем Владимир Дмитриевич и поздние поколения.</desc>
+
+          <path class="edge" d="M720 100V150 M720 226V250H310V280 M720 250H930V280" />
+          <path class="edge" d="M310 362V440 M930 362V410H630V440 M930 410H845V440 M930 410H1115V440" />
+          <path class="edge" d="M845 522V590 M1115 522V560H1085V590 M1115 560H1315V590" />
+          <path class="edge" d="M1315 672V710H800V740 M1315 710H975V740 M1315 710H1150V740 M1315 710H1325V740" />
+
+          <g>
+            <rect class="node confirmed" x="620" y="30" width="200" height="70" rx="14" />
+            <text class="name" x="720" y="58" text-anchor="middle">🧭 Артамон</text>
+            <text class="meta" x="720" y="82" text-anchor="middle">1811 · подтверждён</text>
+          </g>
+          <g>
+            <rect class="node probable" x="580" y="150" width="280" height="76" rx="14" />
+            <text class="name" x="720" y="180" text-anchor="middle">🪵 Парфен / Порфир</text>
+            <text class="meta" x="720" y="205" text-anchor="middle">ок. 1815–1816 · ревизия 1858</text>
+          </g>
+
+          <g>
+            <rect class="node confirmed" x="180" y="280" width="260" height="82" rx="14" />
+            <text class="name" x="310" y="312" text-anchor="middle">🧒 Дмитрий</text>
+            <text class="meta" x="310" y="337" text-anchor="middle">новорождённый, 1858</text>
+            <text class="meta" x="310" y="356" text-anchor="middle">сын Парфена · ✅</text>
+          </g>
+          <g>
+            <rect class="node probable" x="180" y="440" width="260" height="82" rx="14" />
+            <text class="name" x="310" y="472" text-anchor="middle">🧿 Владимир Дмитриевич</text>
+            <text class="meta" x="310" y="497" text-anchor="middle">вероятный сын Дмитрия</text>
+            <text class="meta" x="310" y="516" text-anchor="middle">нужна прямая запись</text>
+          </g>
+
+          <g>
+            <rect class="node confirmed" x="750" y="280" width="360" height="82" rx="14" />
+            <text class="name" x="930" y="312" text-anchor="middle">🛡️ Алексей + 🌹 Варвара</text>
+            <text class="meta" x="930" y="337" text-anchor="middle">ок. 1836–1837 · брак 1857</text>
+            <text class="meta" x="930" y="356" text-anchor="middle">сын Парфена · ✅</text>
+          </g>
+          <g>
+            <rect class="node confirmed" x="535" y="440" width="190" height="82" rx="14" />
+            <text class="name" x="630" y="472" text-anchor="middle">⚓ Сергей</text>
+            <text class="meta" x="630" y="497" text-anchor="middle">1867 · близнец</text>
+          </g>
+          <g>
+            <rect class="node confirmed" x="740" y="440" width="210" height="82" rx="14" />
+            <text class="name" x="845" y="472" text-anchor="middle">🪶 Яков</text>
+            <text class="meta" x="845" y="497" text-anchor="middle">1867 · жена Дарья</text>
+          </g>
+          <g>
+            <rect class="node probable" x="1000" y="440" width="230" height="82" rx="14" />
+            <text class="name" x="1115" y="472" text-anchor="middle">🔨 Максим</text>
+            <text class="meta" x="1115" y="497" text-anchor="middle">поручитель в 1892</text>
+            <text class="meta" x="1115" y="516" text-anchor="middle">сын Алексея [?]</text>
+          </g>
+
+          <g>
+            <rect class="node unknown" x="740" y="590" width="210" height="82" rx="14" />
+            <text class="name" x="845" y="622" text-anchor="middle">🎀 Дочь Якова</text>
+            <text class="meta" x="845" y="647" text-anchor="middle">1896 · имя [?]</text>
+          </g>
+          <g>
+            <rect class="node unknown" x="970" y="590" width="230" height="82" rx="14" />
+            <text class="name" x="1085" y="622" text-anchor="middle">🎈 Дочь Максима</text>
+            <text class="meta" x="1085" y="647" text-anchor="middle">1896 · имя [?]</text>
+          </g>
+          <g>
+            <rect class="node probable" x="1200" y="590" width="230" height="82" rx="14" />
+            <text class="name" x="1315" y="622" text-anchor="middle">🕰️ Николай Максимович</text>
+            <text class="meta" x="1315" y="647" text-anchor="middle">1906 · родители [?]</text>
+          </g>
+
+          <g>
+            <rect class="node unknown" x="720" y="740" width="160" height="62" rx="14" />
+            <text class="name" x="800" y="767" text-anchor="middle">🌺 Александра</text>
+            <text class="meta" x="800" y="789" text-anchor="middle">→ Нина</text>
+          </g>
+          <g>
+            <rect class="node unknown" x="895" y="740" width="160" height="62" rx="14" />
+            <text class="name" x="975" y="767" text-anchor="middle">📘 Николай</text>
+            <text class="meta" x="975" y="789" text-anchor="middle">семейные сведения</text>
+          </g>
+          <g>
+            <rect class="node unknown" x="1070" y="740" width="160" height="62" rx="14" />
+            <text class="name" x="1150" y="767" text-anchor="middle">⚙️ Анатолий</text>
+            <text class="meta" x="1150" y="789" text-anchor="middle">→ Ольга</text>
+          </g>
+          <g>
+            <rect class="node unknown" x="1245" y="740" width="160" height="62" rx="14" />
+            <text class="name" x="1325" y="767" text-anchor="middle">🚲 Владимир</text>
+            <text class="meta" x="1325" y="789" text-anchor="middle">семейные сведения</text>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <section class="panel">
