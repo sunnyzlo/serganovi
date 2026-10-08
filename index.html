@@ -89,20 +89,50 @@
     .facts, .next { margin: 0; padding-left: 1.2em; }
     .facts li, .next li { margin: 0 0 9px; }
     .warning { border-left: 4px solid var(--probable); padding-left: 14px; color: #5f4b2b; }
-    .tree-scroll {
+    .tree-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 10px;
+    }
+    .tree-controls button {
+      min-width: 38px;
+      min-height: 38px;
+      padding: 6px 12px;
+      border: 1px solid #d8cbbb;
+      border-radius: 10px;
+      background: #fffefa;
+      color: var(--ink);
+      font: 700 1.05rem/1 system-ui, sans-serif;
+      cursor: pointer;
+    }
+    .tree-controls button:hover { background: #f2eadf; }
+    .tree-zoom { min-width: 54px; text-align: center; color: var(--muted); font: 700 .9rem/1 system-ui, sans-serif; }
+    .tree-hint { color: var(--muted); font-size: .9rem; }
+    .tree-viewport {
       width: 100%;
       max-width: 1440px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 10px;
+      height: min(78vh, 780px);
+      min-height: 520px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e2d8ca;
+      border-radius: 12px;
+      background: #fffefa;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
     }
+    .tree-viewport.is-dragging { cursor: grabbing; }
     .tree-map {
       display: block;
       width: 1440px;
       max-width: none;
       height: auto;
       margin: 0;
+      transform-origin: 0 0;
+      will-change: transform;
     }
     .tree-map .edge { stroke: var(--line); stroke-width: 3; fill: none; }
     .tree-map .node { fill: #fffefa; stroke: #e6ddcf; stroke-width: 2; }
@@ -120,6 +150,7 @@
       .wrap { width: min(100% - 18px, 1440px); }
       header { padding-top: 28px; }
       .panel { border-radius: 13px; padding: 15px 12px; }
+      .tree-viewport { height: min(72vh, 680px); min-height: 440px; }
       .tree ul { margin-left: 6px; padding-left: 14px; }
       .tree ul > li::before { left: -14px; width: 12px; }
       .person { padding: 10px; }
@@ -131,7 +162,7 @@
     <div class="wrap">
       <h1>Родословная Сергановых</h1>
       <p class="subtitle">Рабочая версия исследования семьи: документы, вероятные связи и следующие шаги.</p>
-      <p class="date">Последнее обновление: 8 октября 2026 года, 10:57 (BST, Europe/London)</p>
+      <p class="date">Последнее обновление: 8 октября 2026 года, 11:03 (BST, Europe/London)</p>
     </div>
   </header>
 
@@ -149,14 +180,21 @@
     <section class="panel" id="tree">
       <h2>Цельное дерево</h2>
       <p class="subtitle">Старшие поколения сверху, младшие снизу. На телефоне схему можно прокручивать горизонтально.</p>
-      <div class="tree-scroll">
-        <svg class="tree-map" viewBox="0 0 1440 1030" role="img" aria-labelledby="tree-title tree-desc">
+      <div class="tree-controls" aria-label="Управление масштабом дерева">
+        <button type="button" id="tree-zoom-out" aria-label="Уменьшить">−</button>
+        <span class="tree-zoom" id="tree-zoom-level">100%</span>
+        <button type="button" id="tree-zoom-in" aria-label="Увеличить">+</button>
+        <button type="button" id="tree-reset" aria-label="Сбросить масштаб и положение">Сбросить</button>
+        <span class="tree-hint">Перетаскивание · pinch двумя пальцами · колесо мыши</span>
+      </div>
+      <div class="tree-viewport" id="tree-viewport">
+        <svg class="tree-map" id="main-tree" viewBox="0 0 1440 1030" role="img" aria-labelledby="tree-title tree-desc">
           <title id="tree-title">Родословная Сергановых сверху вниз</title>
           <desc id="tree-desc">Артамон, Парфен, ветви Дмитрия и Алексея, другие дети Парфена и поздние поколения до Анны.</desc>
 
           <path class="edge" d="M720 100V150 M720 226V250H165V280 M720 250H860V280 M720 250H1260V280" />
           <path class="edge" d="M165 362V440 M860 362V410H560V440 M860 410H790V440 M860 410H1030V440" />
-          <path class="edge" d="M790 522V590 M1030 536V560H915V590 M1030 560H1125V590 M1030 560H1330V590" />
+          <path class="edge" d="M790 522V560H675V590 M1030 536V560H895V590 M1030 560H1110V590 M1030 560H1330V590" />
           <path class="edge" d="M1330 672V710H800V740 M1330 710H975V740 M1330 710H1150V740 M1330 710H1325V740" />
           <path class="edge" d="M800 802V840 M800 912V930H580V950 M800 930H800V950 M800 930H1020V950" />
 
@@ -215,19 +253,19 @@
           </g>
 
           <g>
-            <rect class="node unknown" x="690" y="590" width="200" height="82" rx="14" />
-            <text class="name" x="790" y="622" text-anchor="middle">🎀 Дочь Якова</text>
-            <text class="meta" x="790" y="647" text-anchor="middle">1896 · имя [?]</text>
+            <rect class="node unknown" x="575" y="590" width="200" height="82" rx="14" />
+            <text class="name" x="675" y="622" text-anchor="middle">🎀 Дочь Якова</text>
+            <text class="meta" x="675" y="647" text-anchor="middle">1896 · имя [?]</text>
           </g>
           <g>
-            <rect class="node unknown" x="820" y="590" width="190" height="82" rx="14" />
-            <text class="name compact" x="915" y="622" text-anchor="middle">🎈 Дочь Максима</text>
-            <text class="meta" x="915" y="647" text-anchor="middle">1896 · имя [?]</text>
+            <rect class="node unknown" x="800" y="590" width="190" height="82" rx="14" />
+            <text class="name compact" x="895" y="622" text-anchor="middle">🎈 Дочь Максима</text>
+            <text class="meta" x="895" y="647" text-anchor="middle">1896 · имя [?]</text>
           </g>
           <g>
-            <rect class="node confirmed" x="1035" y="590" width="180" height="82" rx="14" />
-            <text class="name" x="1125" y="622" text-anchor="middle">🧑 Андрей</text>
-            <text class="meta" x="1125" y="647" text-anchor="middle">1896 · сын Максима</text>
+            <rect class="node confirmed" x="1020" y="590" width="180" height="82" rx="14" />
+            <text class="name" x="1110" y="622" text-anchor="middle">🧑 Андрей</text>
+            <text class="meta" x="1110" y="647" text-anchor="middle">1896 · сын Максима</text>
           </g>
           <g>
             <rect class="node probable" x="1240" y="590" width="180" height="82" rx="14" />
@@ -389,6 +427,98 @@
       </ol>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const viewport = document.getElementById('tree-viewport');
+      const map = document.getElementById('main-tree');
+      const level = document.getElementById('tree-zoom-level');
+      const zoomIn = document.getElementById('tree-zoom-in');
+      const zoomOut = document.getElementById('tree-zoom-out');
+      const reset = document.getElementById('tree-reset');
+      if (!viewport || !map) return;
+
+      const MIN_ZOOM = 0.55;
+      const MAX_ZOOM = 2.6;
+      let zoom = 1;
+      let offsetX = 0;
+      let offsetY = 0;
+      const pointers = new Map();
+      let gesture = null;
+
+      const clamp = value => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value));
+      const midpoint = () => {
+        const points = [...pointers.values()];
+        return { x: (points[0].x + points[1].x) / 2, y: (points[0].y + points[1].y) / 2 };
+      };
+      const distance = () => {
+        const points = [...pointers.values()];
+        return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+      };
+      function render() {
+        map.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0) scale(${zoom})`;
+        if (level) level.textContent = `${Math.round(zoom * 100)}%`;
+      }
+      function zoomAt(nextZoom, pointX, pointY) {
+        nextZoom = clamp(nextZoom);
+        const ratio = nextZoom / zoom;
+        offsetX = pointX - (pointX - offsetX) * ratio;
+        offsetY = pointY - (pointY - offsetY) * ratio;
+        zoom = nextZoom;
+        render();
+      }
+      zoomIn?.addEventListener('click', () => zoomAt(zoom * 1.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
+      zoomOut?.addEventListener('click', () => zoomAt(zoom / 1.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
+      reset?.addEventListener('click', () => { zoom = 1; offsetX = 0; offsetY = 0; render(); });
+      viewport.addEventListener('wheel', event => {
+        event.preventDefault();
+        const rect = viewport.getBoundingClientRect();
+        zoomAt(zoom * (event.deltaY < 0 ? 1.12 : 0.89), event.clientX - rect.left, event.clientY - rect.top);
+      }, { passive: false });
+      viewport.addEventListener('pointerdown', event => {
+        viewport.setPointerCapture(event.pointerId);
+        pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+        if (pointers.size === 1) {
+          viewport.classList.add('is-dragging');
+          gesture = { type: 'pan', pointer: event.pointerId, x: event.clientX, y: event.clientY, offsetX, offsetY };
+        } else if (pointers.size === 2) {
+          const center = midpoint();
+          gesture = { type: 'pinch', center, distance: distance(), zoom, offsetX, offsetY };
+        }
+      });
+      viewport.addEventListener('pointermove', event => {
+        if (!pointers.has(event.pointerId)) return;
+        pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+        if (!gesture) return;
+        if (pointers.size >= 2 && gesture.type === 'pinch') {
+          const center = midpoint();
+          const nextZoom = clamp(gesture.zoom * (distance() / Math.max(gesture.distance, 1)));
+          const ratio = nextZoom / gesture.zoom;
+          offsetX = center.x - (gesture.center.x - gesture.offsetX) * ratio;
+          offsetY = center.y - (gesture.center.y - gesture.offsetY) * ratio;
+          zoom = nextZoom;
+          render();
+        } else if (pointers.size === 1 && gesture.type === 'pan') {
+          offsetX = gesture.offsetX + event.clientX - gesture.x;
+          offsetY = gesture.offsetY + event.clientY - gesture.y;
+          render();
+        }
+      });
+      const endPointer = event => {
+        pointers.delete(event.pointerId);
+        if (pointers.size === 0) {
+          gesture = null;
+          viewport.classList.remove('is-dragging');
+        } else if (pointers.size === 1) {
+          const [id, point] = pointers.entries().next().value;
+          gesture = { type: 'pan', pointer: id, x: point.x, y: point.y, offsetX, offsetY };
+        }
+      };
+      viewport.addEventListener('pointerup', endPointer);
+      viewport.addEventListener('pointercancel', endPointer);
+      render();
+    })();
+  </script>
 
   <footer>
     <div class="wrap">Рабочая родословная · исходный подробный файл: <a href="РОДОСЛОВНАЯ_СЕРГАНОВЫХ.md">Markdown-версия</a></div>
