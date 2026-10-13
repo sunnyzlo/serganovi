@@ -152,6 +152,24 @@
     .tree-map .name.compact { font-size: 18px; }
     .tree-map .meta { font-size: 15px; fill: var(--muted); }
     .tree-map .meta.compact { font-size: 13px; }
+    .relation-register { display: grid; gap: 14px; }
+    .relation-block { border: 1px solid #e2d8ca; border-radius: 12px; padding: 14px; background: #fffefa; }
+    .relation-block h3 { margin: 0 0 9px; color: var(--accent); font-size: 1.05rem; }
+    .relation-row { display: flex; flex-wrap: wrap; gap: 9px; align-items: stretch; }
+    .relation-card { flex: 1 1 210px; min-width: 180px; padding: 10px 12px; border: 2px solid #e6ddcf; border-radius: 10px; background: #fff; }
+    .relation-card.probable { border-color: var(--probable); }
+    .relation-card.confirmed { border-color: var(--confirmed); }
+    .relation-card.unknown { border-color: var(--unknown); border-style: dashed; }
+    .relation-card strong { display: block; }
+    .relation-card small { display: block; margin-top: 3px; color: var(--muted); }
+    .relation-note { margin: 9px 0 0; color: var(--muted); font-size: .92rem; }
+    .relation-list { margin: 0; padding-left: 1.2em; columns: 2 360px; column-gap: 28px; }
+    .relation-list li { break-inside: avoid; margin: 0 0 8px; }
+    .relation-list small { display: block; color: var(--muted); }
+    .relation-arrow { color: var(--accent); font-weight: 700; }
+    .relation-excluded { border-left: 4px solid var(--unknown); padding-left: 12px; color: var(--muted); }
+    .graph-secondary { margin-top: 14px; }
+    .graph-secondary > summary { font-weight: 700; }
     footer { color: var(--muted); border-top: 1px solid var(--line); padding: 22px 0 36px; font-size: .9rem; }
     a { color: var(--accent); }
     @media (max-width: 420px) {
@@ -185,9 +203,76 @@
       <p>Цвет карточки показывает качество сведений. Пунктирная линия означает связь, которую ещё нужно подтвердить. Семейные сообщения и выписка ревизии отмечены отдельно от прочитанных оригиналов. Отчество само по себе не устанавливает конкретного отца.</p>
     </section>
 
+    <section class="panel" id="structure">
+      <h2>Структура связей — основной рабочий вид</h2>
+      <p>Сначала фиксируем связь словами, потом сверяем её с документом и только затем показываем на схеме. Стрелка означает родительскую связь; «брат/сестра» означает один поколенческий уровень и не является линией от родителя.</p>
+      <p><a href="СВЯЗИ-ДЕРЕВА-2026-10-13.md">Открыть полный реестр связей</a></p>
+      <div class="relation-register">
+        <div class="relation-block">
+          <h3>Поколение Парфена: братья, не дети друг друга</h3>
+          <div class="relation-row">
+            <div class="relation-card probable"><strong>Назар Артамонович</strong><small>брат Парфена · дети: Родион, Анастасия</small></div>
+            <div class="relation-card probable"><strong>Парфен / Порфир Артамонович</strong><small>отец семейства · ревизия 1858</small></div>
+            <div class="relation-card probable"><strong>Абрам Артамонович</strong><small>брат Парфена · по выписке 1858</small></div>
+          </div>
+          <p class="relation-note">Общий отец Парфена, Назара и Абрама пока не установлен. Поэтому между этими карточками нет родительской линии.</p>
+        </div>
+        <div class="relation-block">
+          <h3>Дети Парфена / Порфирия</h3>
+          <ul class="relation-list">
+            <li><span class="relation-arrow">Парфен →</span> Авдотья Парфенова <small>13 лет в 1858, по выписке</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Алексей Порфирьевич + Варвара <small>брак 1857; Алексей — сын Парфена по сопоставлению</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Агриппина Порфирьевна <small>дочь Порфирия в брачной записи 1864</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Климент <small>9 лет в 1850, умер в 1857</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Терентий <small>½ года в 1850, умер в 1855</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Дмитрий <small>5 лет в 1858, по выписке</small></li>
+            <li><span class="relation-arrow">Парфен →</span> Анна <small>рождение 1839, мать Ефросинья Карпова</small></li>
+          </ul>
+        </div>
+        <div class="relation-block">
+          <h3>Потомки Алексея и Варвары</h3>
+          <ul class="relation-list">
+            <li><span class="relation-arrow">Алексей + Варвара →</span> Сергей <small>близнец, 1867</small></li>
+            <li><span class="relation-arrow">Алексей + Варвара →</span> Яков Алексеевич <small>близнец, 1867</small></li>
+            <li><span class="relation-arrow">Алексей →</span> Максим Алексеевич <small>высокая вероятность: один подходящий Алексей в ревизии 1858; поручитель 1892</small></li>
+            <li><span class="relation-arrow">Назар →</span> Родион и Анастасия <small>11 лет и 3 года в 1858</small></li>
+            <li><span class="relation-arrow">Максим →</span> Андрей <small>прямо указан сыном Максима в записи 1896</small></li>
+          </ul>
+        </div>
+        <div class="relation-block">
+          <h3>Поздняя семейная ветвь</h3>
+          <ul class="relation-list">
+            <li><span class="relation-arrow">Максим →</span> Николай Максимович, 1906 <small>высоковероятная семейная связь; метрическая запись не найдена</small></li>
+            <li><span class="relation-arrow">Николай Максимович + Анна Ивановна →</span> Александра, Николай, Анатолий, Владимир <small>семейные сведения</small></li>
+            <li><span class="relation-arrow">Александра + Яков →</span> Нина и Галя <small>Яков Андреевич, 1914; семейные сведения</small></li>
+            <li><span class="relation-arrow">Николай + Лида →</span> Татьяна + Владимир → Денис <small>отдельная семейная ветвь</small></li>
+            <li><span class="relation-arrow">Николай + Лида →</span> Володя + Оля → Аня и Люда <small>отдельная семейная ветвь</small></li>
+            <li><span class="relation-arrow">Анатолий, 1939 →</span> Ольга <small>Рязань</small></li>
+            <li><span class="relation-arrow">Владимир →</span> Лена, Володя и Витя <small>Лена — Москва</small></li>
+          </ul>
+        </div>
+        <div class="relation-block">
+          <h3>Отдельная семья Агафона</h3>
+          <div class="relation-row">
+            <div class="relation-card probable"><strong>Агафон</strong><small>54 года в 1823 · жена Василиса Иванова</small></div>
+            <div class="relation-card probable"><strong><span class="relation-arrow">Агафон →</span> Артамон / Артемон</strong><small>14 лет в 1823; вероятный отец Татьяны 1836</small></div>
+            <div class="relation-card unknown"><strong><span class="relation-arrow">Артемон →</span> Татьяна, 1836</strong><small>отдельная запись, не поздняя Татьяна Серганова</small></div>
+          </div>
+          <p class="relation-excluded">Агафонская семья не соединяется с Парфеном: документального родства нет.</p>
+        </div>
+        <div class="relation-block">
+          <h3>Не подключать без новых документов</h3>
+          <p class="relation-excluded">Аграфена из SVG, Матрёна, Григорий Владимирович и боковая ветвь Захаровых остаются отдельными кандидатами. Их нельзя присоединять к основной линии только по имени, отчеству или соседству в записи.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="panel" id="tree">
-      <h2>Рабочее дерево</h2>
-      <p class="subtitle">Старшие поколения сверху, младшие снизу. На телефоне схему можно прокручивать горизонтально.</p>
+      <h2>Графический обзор</h2>
+      <p class="subtitle">Это вторичное изображение. При расхождении с реестром выше правильным считается реестр связей.</p>
+      <details class="graph-secondary">
+        <summary>Показать большой SVG-обзор</summary>
+      <div class="tree-controls" aria-label="Управление масштабом дерева">
       <div class="tree-controls" aria-label="Управление масштабом дерева">
         <button type="button" id="tree-zoom-out" aria-label="Уменьшить">−</button>
         <span class="tree-zoom" id="tree-zoom-level">100%</span>
@@ -295,6 +380,7 @@
           <g><rect class="node unknown" x="1150" y="1420" width="300" height="82" rx="14" /><text class="name compact" x="1300" y="1451" text-anchor="middle">🏖️ Захаров Даниил</text><text class="meta" x="1300" y="1477" text-anchor="middle">Александрович · 2016</text></g>
         </svg>
       </div>
+      </details>
     </section>
 
     <section class="panel" id="audit">
