@@ -152,9 +152,16 @@
     .tree-map .name.compact { font-size: 18px; }
     .tree-map .meta { font-size: 15px; fill: var(--muted); }
     .tree-map .meta.compact { font-size: 13px; }
-    .relation-register { display: grid; gap: 14px; }
+    .relation-register { display: flex; flex-direction: column; gap: 14px; }
+    .relation-block:nth-child(5) { order: 1; }
+    .relation-block:nth-child(2) { order: 2; }
+    .relation-block:nth-child(1) { order: 3; }
+    .relation-block:nth-child(3) { order: 4; }
+    .relation-block:nth-child(4) { order: 5; }
+    .relation-block:nth-child(6) { order: 6; }
     .relation-block { border: 1px solid #e2d8ca; border-radius: 12px; padding: 14px; background: #fffefa; }
     .relation-block h3 { margin: 0 0 9px; color: var(--accent); font-size: 1.05rem; }
+    .period-label { display: inline-block; margin-right: 8px; padding: 3px 8px; border-radius: 999px; background: #eee4d6; color: var(--accent); font: 700 .76rem/1.2 system-ui, sans-serif; }
     .relation-row { display: flex; flex-wrap: wrap; gap: 9px; align-items: stretch; }
     .relation-card { flex: 1 1 210px; min-width: 180px; padding: 10px 12px; border: 2px solid #e6ddcf; border-radius: 10px; background: #fff; }
     .relation-card.probable { border-color: var(--probable); }
@@ -209,7 +216,7 @@
       <p><a href="СВЯЗИ-ДЕРЕВА-2026-10-13.md">Открыть полный реестр связей</a></p>
       <div class="relation-register">
         <div class="relation-block">
-          <h3>Поколение Парфена: братья, не дети друг друга</h3>
+          <h3><span class="period-label">1858</span>Поколение Парфена: братья, не дети друг друга</h3>
           <div class="relation-row">
             <div class="relation-card probable"><strong>Назар Артамонович</strong><small>брат Парфена · дети: Родион, Анастасия</small></div>
             <div class="relation-card probable"><strong>Парфен / Порфир Артамонович</strong><small>отец семейства · ревизия 1858</small></div>
@@ -218,7 +225,7 @@
           <p class="relation-note">Общий отец Парфена, Назара и Абрама пока не установлен. Поэтому между этими карточками нет родительской линии.</p>
         </div>
         <div class="relation-block">
-          <h3>Дети Парфена / Порфирия</h3>
+          <h3><span class="period-label">1839–1858</span>Дети Парфена / Порфирия</h3>
           <ul class="relation-list">
             <li><span class="relation-arrow">Парфен →</span> Авдотья Парфенова <small>13 лет в 1858, по выписке</small></li>
             <li><span class="relation-arrow">Парфен →</span> Алексей Порфирьевич + Варвара <small>брак 1857; Алексей — сын Парфена по сопоставлению</small></li>
@@ -230,7 +237,7 @@
           </ul>
         </div>
         <div class="relation-block">
-          <h3>Потомки Алексея и Варвары</h3>
+          <h3><span class="period-label">1857–1896</span>Потомки Алексея и Варвары</h3>
           <ul class="relation-list">
             <li><span class="relation-arrow">Алексей + Варвара →</span> Сергей <small>близнец, 1867</small></li>
             <li><span class="relation-arrow">Алексей + Варвара →</span> Яков Алексеевич <small>близнец, 1867</small></li>
@@ -240,7 +247,7 @@
           </ul>
         </div>
         <div class="relation-block">
-          <h3>Поздняя семейная ветвь</h3>
+          <h3><span class="period-label">1904–середина XX века</span>Поздняя семейная ветвь</h3>
           <ul class="relation-list">
             <li><span class="relation-arrow">Максим →</span> Николай Максимович, 1906 <small>высоковероятная семейная связь; метрическая запись не найдена</small></li>
             <li><span class="relation-arrow">Николай Максимович + Анна Ивановна →</span> Александра, Николай, Анатолий, Владимир <small>семейные сведения</small></li>
@@ -252,7 +259,7 @@
           </ul>
         </div>
         <div class="relation-block">
-          <h3>Отдельная семья Агафона</h3>
+          <h3><span class="period-label">1823–1836</span>Отдельная семья Агафона</h3>
           <div class="relation-row">
             <div class="relation-card probable"><strong>Агафон</strong><small>54 года в 1823 · жена Василиса Иванова</small></div>
             <div class="relation-card probable"><strong><span class="relation-arrow">Агафон →</span> Артамон / Артемон</strong><small>14 лет в 1823; вероятный отец Татьяны 1836</small></div>
@@ -261,7 +268,7 @@
           <p class="relation-excluded">Агафонская семья не соединяется с Парфеном: документального родства нет.</p>
         </div>
         <div class="relation-block">
-          <h3>Не подключать без новых документов</h3>
+          <h3><span class="period-label">Годы не установлены</span>Не подключать без новых документов</h3>
           <p class="relation-excluded">Аграфена из SVG, Матрёна, Григорий Владимирович и боковая ветвь Захаровых остаются отдельными кандидатами. Их нельзя присоединять к основной линии только по имени, отчеству или соседству в записи.</p>
         </div>
       </div>
